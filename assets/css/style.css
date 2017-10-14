@@ -1,0 +1,55 @@
+* {
+	box-sizing: border-box;
+}
+ 
+html, body {
+    min-height: 100%;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: url("../images/train.jpg") no-repeat center center; 
+    position: absolute; 
+    background-size: cover;
+}
+
+.jumbotron-fluid {
+    text-align: center;
+    background: url("../images/victorian_pattern.jpg") no-repeat center center; 
+    color: rgba(255, 255, 255, 0.897);
+    font-family: 'MedievalSharp', cursive;      
+}
+
+.lead {
+    font-family: 'MedievalSharp', cursive;  
+    font-size: 22px;
+}
+
+.container {
+    color: rgba(255, 255, 255, 0.788);
+}
+
+table {
+    padding: 10px;
+    background: url("../images/red_background.jpg") no-repeat center center;
+    font-family: 'MedievalSharp', cursive;  
+}
+
+form {
+    padding: 10px;
+    background: url("../images/red_background.jpg") no-repeat center center;
+    font-family: 'MedievalSharp', cursive;  
+}
+
+.panel-heading {
+    background: url("../images/red_background.jpg") no-repeat center center;
+    font-family: 'MedievalSharp', cursive;  
+    font-size: 22px;    
+}
+
+#header{
+    color: rgba(255, 255, 255, 0.788);
+}
+
+#addTrainBtn {
+    background-color: rgba(14, 1, 1, 0.89)
+s}
