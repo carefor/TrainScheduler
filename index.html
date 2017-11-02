@@ -1,78 +1,98 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
   <meta charset="UTF-8">
-   <title>Murder on the Orient Express</title>
-   <link rel="icon" type="image/png" href="http://www.iconsdb.com/icons/preview/soylent-red/railway-station-xxl.png">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <link href="https://fonts.googleapis.com/css?family=MedievalSharp|Tangerine" rel="stylesheet">   
-   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <title>Murder on the Orient Express</title>
+  <link rel="icon" type="image/png" href="http://www.iconsdb.com/icons/preview/soylent-red/railway-station-xxl.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lancelot" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-s
+
+
 <body>
 
-    <div class="jumbotron jumbotron-fluid" id="billboard">
-        <div class="container-fluid">
-          <h1 class="display-3">MURDER ON THE ORIENT EXPRESS</h1>
-          <p class="lead">Pick your poison</p>
-        </div>
-    </div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920px" height="1080px" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <mask id="mask" x="0" y="0" width="1920" height="1080">
+        <rect x="0" y="0" width="1920" height="1080" />
+        <text x="10" y="25%" id="intensify">MURDER</text>
+        <text x="10" y="40%">ON THE</text>
+        <text x="10" y="55%">ORIENT</text>
+        <text x="10" y="70%">EXPRESS</text>
+        <text x="10" y="85%">Pick Your Poison</text>
+      </mask>
+    </defs>
+    <rect x="0" y="0" width="1920 " height="1080" />
+  </svg>
+  <video id="video" autoplay="autoplay" muted="muted" preload="auto" loop="loop" poster="assets/images/train.jpg">
+    <source src="assets/images/smoke.mp4" type="video/mp4">
+  </video>
 
-  <section>
-    <div class="container" id="table-container">
-        <div class="panel panel-default">
+  <div class=".col-sm-6"></div>
+  <div class=".col-sm-6" id="image-div"></div>
+
+  <div id="dynamic-container">
+
+    <div class="table-container">
+      <div class="panel panel-default">
         <div class="panel-heading" id="header">Current Train Schedule</div>
 
-        <div class="table-responsive ">
-        <table class="table table-striped table-hover" id="train-schedule">
-          <thead class>
-            <tr>
-              <th>Train Name</th>
-              <th>Destination</th>
-              <th>Frequency (min)</th>
-              <th>Next Arrival</th>
-              <th>Minutes Away</th>
-              <th>Edit Entry</th>
-              <th>Delete Entry</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="table table-condensed table-striped" id="train-schedule">
+            <thead>
+              <tr>
+                <th class="text-center">Train
+                  <br>Name</th>
+                <th class="text-center">Destination</th>
+                <th class="text-center">Frequency (min)</th>
+                <th class="text-center">Next Arrival</th>
+                <th class="text-center">Minutes Away</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
         </div>
       </div>
+    </div>
 
-      <div class="container col-sm-12">
-            <div class="panel panel-default">
-            <div class="panel-heading" id="header">Add Train</div>
-    
+    <div class="input-container">
+      <div class="panel panel-default">
+        <div class="panel-heading" id="header">Add Train</div>
+
         <form>
-    <div class="form-group">
-    <label for="nameInput">Train Name</label>
-    <input type="text" class="form-control" id="nameInput" required>
-  </div>
-  <div class="form-group">
-    <label for="destInput">Destination</label>
-    <input type="text" class="form-control" id="destInput" required>
-    </div>
-    <div class="form-group">
+          <div class="form-group">
+            <label for="nameInput">Train Name</label>
+            <input type="text" class="form-control" id="nameInput" placeholder="Orient Express" required>
+          </div>
+          <div class="form-group">
+            <label for="destInput">Destination</label>
+            <input type="text" class="form-control" id="destInput" placeholder="Constantinople" required>
+          </div>
+          <div class="form-group">
             <label for="firstTimeInput">First Train Time (HH:mm - military time)</label>
-            <input type="text" class="form-control" id="firstTimeInput" attr-name="restrict" required>
-    </div>
-    <div class="form-group">
+            <input type="text" class="form-control" id="firstTimeInput" maxlength="5" placeholder="00:00" required>
+          </div>
+          <div class="form-group">
             <label for="freqInput">Frequency (min)</label>
-            <input type="text" class="form-control" id="freqInput" required>
-            </div>
-  <button type="submit" class="btn btn-primary" id="addTrainBtn">Submit</button>
-</form>
-</section>
+            <input type="number" class="form-control" id="freqInput" placeholder="13" required>
+          </div>
+          <button type="submit" class="btn btn-primary" id="addTrainBtn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
-  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-  <script type="text/javascript" src="assets/javascript/schedule.js"></script>
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js "></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js "></script>
+  <script type="text/javascript " src="assets/javascript/schedule.js "></script>
+
 </body>
+
 </html>
