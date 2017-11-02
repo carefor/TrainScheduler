@@ -76,14 +76,14 @@ $(document).ready(function () {
             destination + "</td><td>" + frequency + " min" + "</td><td>" + nextTrain +
             "</td><td>" + minsAway + "</td></tr>");
     });
-});
 
-//Automatically insert colon after hours typed
-var timeInput = $("#firstTimeInput");
-for (var i = 0; i < timeInput.length; i++) {
-    timeInput[i].addEventListener('keyup', function (e) {
-        var reg = /[0-9]/;
-        //Add colon if string length > 2 and string is a number
-        if (this.value.length == 2 && reg.test(this.value)) this.value = this.value + ":";
-    });
-};
+    //Automatically insert colon after hours typed
+    var timeInput = $("#firstTimeInput");
+    for (var i = 0; i < timeInput.length; i++) {
+        timeInput[i].addEventListener('keyup', function (e) {
+            var reg = /[0-9]/;
+            //Add colon if string length > 2 and string is a number
+            if (this.value.length == 2 && reg.test(this.value)) this.value = this.value + ":";
+        });
+    };
+});
